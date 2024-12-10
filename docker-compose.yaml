@@ -1,0 +1,55 @@
+services:
+  basic-server:
+    image: kotlin-ktor-starter
+    container_name: kotlin-ktor-server
+    ports:
+      - "8888:8888"
+    environment:
+      PORT: 8888
+      APP: /opt/applications/basic-server.jar
+  data-analyzer:
+    image: kotlin-ktor-starter
+    container_name: kotlin-ktor-analyzer
+    ports:
+      - "8887:8887"
+    environment:
+      PORT: 8887
+      APP: /opt/applications/data-analyzer-server.jar
+  data-collector:
+    image: kotlin-ktor-starter
+    container_name: kotlin-ktor-collector
+    ports:
+      - "8886:8886"
+    environment:
+      PORT: 8886
+      APP: /opt/applications/data-collector-server.jar
+  rabbitmq:
+    image: rabbitmq:3-management
+    ports:
+      - "5672:5672"   # Port for RabbitMQ server
+      - "15672:15672" # Port for RabbitMQ management UI
+    environment:
+      - RABBITMQ_DEFAULT_USER=guest
+      - RABBITMQ_DEFAULT_PASS=guest
+  prometheus:
+    image: prom/prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+  postgres:
+    image: postgres:latest
+    container_name: PostgreSql
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: Tester123
+      POSTGRES_DB: stock_data
+    ports:
+      - "5432:5432"
+  app:
+    build: .
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres
+      -

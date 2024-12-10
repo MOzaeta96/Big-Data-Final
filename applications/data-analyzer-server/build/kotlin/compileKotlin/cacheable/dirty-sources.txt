@@ -1,0 +1,5 @@
+C:\Users\marti\Downloads\MO-Big-Data-Final\applications\data-analyzer-server\src\main\kotlin\io\initialcapacity\analyzer\models\Companies.kt
+C:\Users\marti\Downloads\MO-Big-Data-Final\applications\data-analyzer-server\src\main\kotlin\io\initialcapacity\analyzer\App.kt
+C:\Users\marti\Downloads\MO-Big-Data-Final\applications\data-analyzer-server\src\main\kotlin\io\initialcapacity\analyzer\MessageConsumer.kt
+C:\Users\marti\Downloads\MO-Big-Data-Final\applications\data-analyzer-server\src\main\kotlin\io\initialcapacity\analyzer\models\StockPrices.kt
+C:\Users\marti\Downloads\MO-Big-Data-Final\applications\data-analyzer-server\src\main\kotlin\io\initialcapacity\analyzer\models\DatabaseModels.kt
